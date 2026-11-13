@@ -28,7 +28,6 @@ import com.ba.terminal.ui.components.Muted
 import com.ba.terminal.ui.components.SectionTitle
 import com.ba.terminal.ui.theme.GlassGreen
 import com.ba.terminal.ui.theme.GlassText
-import java.io.File
 
 @Composable
 fun HomeScreen(app: BaTerminalApp, modifier: Modifier = Modifier, onOpenTerminal: () -> Unit) {
