@@ -67,7 +67,7 @@ private fun readMem(app: BaTerminalApp): String {
         val info = ActivityManager.MemoryInfo()
         am.getMemoryInfo(info)
         val totalGb = info.totalMem / 1024 / 1024 / 1024
-        val sf = StatFs(File(app.filesDir.path))
+        val sf = StatFs(app.filesDir.path)
         val freeGb = sf.availableBytes / 1024 / 1024 / 1024
         "RAM total: ${totalGb} GB  •  Free storage: ${freeGb} GB"
     } catch (_: Exception) {

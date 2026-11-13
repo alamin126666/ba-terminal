@@ -43,8 +43,8 @@ fun TerminalScreen(app: BaTerminalApp, modifier: Modifier = Modifier) {
     val term = app.terminals.current()
     val output by term.output.collectAsState()
     val cwd by term.cwd.collectAsState()
-    val fontSize by app.settings.fontSize.collectAsState()
-    val extraKeys by app.settings.extraKeys.collectAsState()
+    val fontSize by app.settings.fontSize.collectAsState(initial = 14f)
+    val extraKeys by app.settings.extraKeys.collectAsState(initial = true)
     var input by remember { mutableStateOf("") }
     var historyIdx by remember { mutableStateOf(-1) }
     val history by term.history.collectAsState()

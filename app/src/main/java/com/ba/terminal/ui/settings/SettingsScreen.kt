@@ -31,9 +31,9 @@ import kotlinx.coroutines.launch
 @Composable
 fun SettingsScreen(app: BaTerminalApp, modifier: Modifier = Modifier) {
     val scope = rememberCoroutineScope()
-    val fontSize by app.settings.fontSize.collectAsState()
-    val alpha by app.settings.transparency.collectAsState()
-    val extraKeys by app.settings.extraKeys.collectAsState()
+    val fontSize by app.settings.fontSize.collectAsState(initial = 14f)
+    val alpha by app.settings.transparency.collectAsState(initial = 0.92f)
+    val extraKeys by app.settings.extraKeys.collectAsState(initial = true)
     Column(modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Text("Settings", color = GlassText, fontSize = 22.sp, fontWeight = FontWeight.Bold)
         GlassCard(Modifier.fillMaxWidth()) {
